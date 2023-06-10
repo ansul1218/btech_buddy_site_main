@@ -108,6 +108,7 @@
                         <button class="tablinks" onclick="openSubject(event, 'sem1_mechanics_notes')">Mechanics</button>
                         <button class="tablinks" onclick="openSubject(event, 'sem1_c_notes')">C++</button>
                         <button class="tablinks" onclick="openSubject(event, 'sem1_ed_notes')">Engineering Drawing</button>
+                        <button class="tablinks" onclick="openSubject(event, 'sem1_environment_notes')">Environmental science</button>
                     </div>
                     
                     <!-- Tab content -->
@@ -303,7 +304,39 @@
                         </script>
 
                     </div>
-            
+
+
+                    <div id="sem1_environment_notes" class="tabcontent">
+
+                        <script> //define some CSV data
+                             var csvData = `"3d design", "23/11/2022","https://1drv.ms/b/s!Ao5mnlFEn5kDZu-km_vQTYSAba0?e=ZeqOIl"
+                              "2d design", "25/11/2022","https://1drv.ms/b/s!Ao5mnlFEn5kDZu-km_vQTYSAba0?e=ZeqOIl"
+                              "parallel spaces", "26/11/2023","https://1drv.ms/b/s!Ao5mnlFEn5kDZu-km_vQTYSAba0?e=ZeqOIl"`;
+ 
+                             //define table
+                             var table = new Tabulator("#sem1_environment_notes", {
+                                 data:csvData,
+                                 importFormat:"csv",
+                                 layout:"fitColumns",
+                                 responsiveLayout:true,
+                                 columns:[
+                                 {title:"Name", field:"Name", formatter:"plaintext" ,responsive:0},
+                                 {title:"Date", field:"Date", formatter:"plaintext" , responsive:3},
+                                 {title:"Download url", field:"Download url",responsive:0, formatter:"link", formatterParams:{
+                                     labelField:"Download url",
+                                     label: "click here to download",
+                                     download:true,
+                                     target:"_blank",
+                                     
+                                 }}
+                           
+                             
+ 
+                                 ]    
+                             });
+                         </script>
+ 
+                     </div>
                         </div>
         </div>
     </div>
@@ -1335,10 +1368,10 @@
                     <div class="tab">
                         <button class="tablinks active" onclick="openSubject(event, 'sem6_ajava_notes')">Advance JAVA</button>
                         <button class="tablinks" onclick="openSubject(event, 'sem6_dos_notes')"> Distributed Operating Systems </button>
-                        <button class="tablinks" onclick="openSubject(event, 'sem6_compiler design_notes')">Compiler Design</button>
+                        <button class="tablinks" onclick="openSubject(event, 'sem6_compiler_design_notes')">Compiler Design</button>
                         <button class="tablinks" onclick="openSubject(event, 'sem6_linux_notes')">Linux Administration </button>
                         <button class="tablinks" onclick="openSubject(event, 'sem6_mining_notes')">Data Mining and Warehousing</button>
-                        <button class="tablinks" onclick="openSubject(event, 'sem6_modeling_notes')">Modeling and Simula tion</button>
+                        <button class="tablinks" onclick="openSubject(event, 'sem6_modeling_notes')">Modeling and Simulation</button>
                     </div>
                     
                     <!-- Tab content -->
@@ -1406,7 +1439,7 @@
 
                     </div>
                     
-                    <div id="sem6_compiler design_notes" class="tabcontent">
+                    <div id="sem6_compiler_design_notes" class="tabcontent">
                       
                         <script> //define some CSV data
                             var csvData = `"chapter 1", "26/09/2022","https://1drv.ms/b/s!Ao5mnlFEn5kDZu-km_vQTYSAba0?e=ZeqOIl"
@@ -1414,7 +1447,7 @@
                              "book", "26/10/2022","https://1drv.ms/b/s!Ao5mnlFEn5kDZu-km_vQTYSAba0?e=ZeqOIl"`;
 
                             //define table
-                            var table = new Tabulator("#sem6_compiler design_notes", {
+                            var table = new Tabulator("#sem6_compiler_design_notes", {
                                 data:csvData,
                                 importFormat:"csv",
                                 layout:"fitColumns",
